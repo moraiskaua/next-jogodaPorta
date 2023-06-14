@@ -11,8 +11,8 @@ const Door = (props: DoorProps) => {
     const door = props.value;
     const isSelected = door.selected && !door.opened ? styles.selected : '';
 
-    const handleToggleSelection = e => props.onChange(door.toggleSelection());
-    const handleOpenDoor = e => {
+    const handleToggleSelection = () => props.onChange(door.toggleSelection());
+    const handleOpenDoor = (e: React.MouseEvent<HTMLDivElement>) => {
         e.stopPropagation();
         props.onChange(door.OpenDoor());
     };
